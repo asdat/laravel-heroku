@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::any('/api/{url}', function ($url) {
+Route::any('api/{url}', function ($url) {
     return file_get_contents('http://api.vps.asdat.org/'.$url);
 });
