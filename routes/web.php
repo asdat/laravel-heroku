@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('api/{url}', function ($url) {
-	return 'api - '.$url;
-    // return file_get_contents('http://api.vps.asdat.org/'.$url);
+Route::any('api/{url?}', function ($url) {
+    return file_get_contents('https://u-vey-dev-api.herokuapp.com/api/'.$url);
 });
