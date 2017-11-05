@@ -17,7 +17,7 @@ Route::get('/{url?}', function ($url) {
 })->where('url' => '(about|signin|signup|timeline)');
 
 Route::prefix('api')->group(function () {
-    Route::get('{url?}', function () {
+    Route::get('{url?}', function ($url) {
     	echo $request = 'https://u-vey-dev-api.herokuapp.com/api/'.$url;
         return file_get_contents($request);
     });
