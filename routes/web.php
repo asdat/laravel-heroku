@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/', function () {
+	return file_get_contents('https://u-vey-dev-ui.herokuapp.com/');
+})
+
 Route::get('/{url?}', function ($url) {
 	echo $request = 'https://u-vey-dev-ui.herokuapp.com/'.$url;
     return file_get_contents($request);
